@@ -3,9 +3,8 @@
 }
 
 .card__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+
   gap: 17px;
   list-style-type: none;
 }
@@ -16,7 +15,8 @@
   background-color: #fff;
 }
 
-.card__title {
+.card__description {
+  display: flex;
   color: #000;
   font-family: "Inter", serif;
   font-size: 24px;
