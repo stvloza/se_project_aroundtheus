@@ -12,16 +12,20 @@
 .card {
   max-width: 282px;
   max-height: 361px;
-  background-color: #fff;
 }
 
 .card__description {
+  background-color: #fff;
   display: flex;
   color: #000;
   font-family: "Inter", serif;
   font-size: 24px;
   font-weight: 900;
   line-height: 29px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 137px;
 }
 
 .card__image {
@@ -29,7 +33,7 @@
   height: 282px;
 }
 
-.card__button {
+.card__like-button {
   background: transparent url(../images/heart_logo_black.svg);
   color: black;
 }
