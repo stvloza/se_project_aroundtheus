@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   padding-top: 40px;
+  padding-right: 0;
 }
 
 .profile__info {
@@ -10,6 +11,7 @@
     "title button"
     "description description";
   grid-template-columns: minmax(auto, 373px) auto;
+  padding-right: 0;
 }
 
 .profile__edit-button {
@@ -86,6 +88,7 @@
     justify-content: center;
     width: 100%;
     margin-top: 25px;
+    padding: 0;
   }
 
   .profile__title {
@@ -119,5 +122,19 @@
   .profile__edit-button {
     height: 18px;
     width: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
   }
 }
