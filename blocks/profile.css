@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   padding-top: 40px;
-  padding-bottom: 10px;
 }
 
 .profile__info {
@@ -116,5 +115,9 @@
   }
   .profile__title {
     margin-bottom: 15px;
+  }
+  .profile__edit-button {
+    height: 18px;
+    width: 18px;
   }
 }
