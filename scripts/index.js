@@ -1,19 +1,19 @@
 const initialCards = [
   {
-    title: "Yosemite Valley",
+    name: "Yosemite Valley",
     link: "practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
   },
 
   {
-    title: "Lake Louise",
+    name: "Lake Louise",
     link: "practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
   },
   {
-    title: "Bald Mountains",
+    name: "Bald Mountains",
     link: "practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
   },
   {
-    title: "Latemar",
+    name: "Latemar",
     link: "practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
   },
   {
