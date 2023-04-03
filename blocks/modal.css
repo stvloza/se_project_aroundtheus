@@ -1,15 +1,14 @@
 .modal {
-  /* display: none; */
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  color: #000;
-  padding: 0 19px;
-  display: none;
+  padding: 0;
+  height: 100vh;
+  min-width: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+  /* display: none; */
 }
 
 .modal_opened {
@@ -17,34 +16,21 @@
 }
 
 .modal__container {
-  position: relative;
   background-color: #fff;
-  margin: auto;
-  padding: 36px;
+  width: 430px;
+  max-width: 100%;
   border-radius: 10px;
+  padding-bottom: 30px;
+  position: relative;
+  margin: auto;
+  top: 195px;
 }
 
-.modal__close {
-  background-image: url(../images/close.svg);
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  position: absolute;
-  bottom: calc(100% + 5px);
-  left: calc(100% + 5px);
-}
-
-.modal__heading {
-}
-
-.modal__form {
-}
-
-.modal__button {
+@media screen and (max-width: 620px) {
+  .modal__container {
+    width: 282px;
+    max-width: 100%;
+    padding-bottom: 25px;
+    top: 123px;
+  }
 }
