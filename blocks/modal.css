@@ -8,7 +8,7 @@
   min-width: 100%;
   z-index: 2;
   box-sizing: border-box;
-  /* display: none; */
+  display: none;
 }
 
 .modal_opened {
@@ -23,7 +23,6 @@
   padding-bottom: 30px;
   position: relative;
   margin: auto;
-  top: 195px;
 }
 
 @media screen and (max-width: 620px) {
