@@ -23,6 +23,9 @@
   padding-bottom: 30px;
   position: relative;
   margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 620px) {
@@ -30,6 +33,7 @@
     width: 282px;
     max-width: 100%;
     padding-bottom: 25px;
-    top: 123px;
+    height: 322px;
+    padding: 0;
   }
 }
