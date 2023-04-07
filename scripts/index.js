@@ -27,16 +27,21 @@ const initialCards = [
   },
 ];
 
-console.log(initialCards);
+//  Elements
 
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
+const formExitBtn = profileEditModal.querySelector("#form-exit-button");
+const profileTitle = document.querySelector(".profile__title");
+const profileDescription = document.querySelector(".profile__description");
+
+console.log(profileTitle.textContent);
+
+console.log(profileDescription.textContent);
 
 profileEditBtn.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened");
 });
-
-const formExitBtn = document.querySelector("#form-exit-button");
 
 formExitBtn.addEventListener("click", () => {
   profileEditModal.classList.remove("modal_opened");
