@@ -32,8 +32,6 @@
   .modal__container {
     width: 282px;
     max-width: 100%;
-    padding-bottom: 25px;
-    height: 322px;
-    padding: 0;
+    padding-bottom: 22px;
   }
 }
