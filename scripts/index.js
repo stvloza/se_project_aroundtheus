@@ -46,7 +46,7 @@ const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
 /* -------------------------------------------------------------------------- */
-/*                                  Functions                                  */
+/*                                 Functions                                  */
 /* -------------------------------------------------------------------------- */
 
 function closePopop() {
