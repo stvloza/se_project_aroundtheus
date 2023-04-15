@@ -91,5 +91,3 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsListEl.prepend(cardElement);
 });
-
-console.log();
