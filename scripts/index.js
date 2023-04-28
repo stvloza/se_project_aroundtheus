@@ -91,3 +91,14 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsListEl.prepend(cardElement);
 });
+
+/* -------------------------------------------------------------------------- */
+/*                                  Template                                  */
+/* -------------------------------------------------------------------------- */
+
+/*const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+
+initialCards.forEach(function (obj) {
+  console.log(obj);
+}); /
