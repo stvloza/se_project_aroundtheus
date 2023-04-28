@@ -40,10 +40,14 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 const profileEditForm = profileEditModal.querySelector("#modal-form");
-const formExitBtn = profileEditModal.querySelector("#form-exit-button");
+const profileExitBtn = profileEditModal.querySelector("#form-exit-button");
+
 const cardsListEl = document.querySelector(".cards__list");
-const cardsEditModal = document.querySelector("#profile-edit-modal");
+const cardsEditModal = document.querySelector("#cards-edit-modal");
 const cardsEditBtn = document.querySelector("#add-button");
+const cardExitBtn = cardsEditModal.querySelector("#card-exit-button");
+const cardEditForm = cardsEditModal.querySelector("#modal-card-form");
+
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -51,8 +55,12 @@ const cardTemplate =
 /*                                 Functions                                  */
 /* -------------------------------------------------------------------------- */
 
-function closePopop() {
-  profileEditModal.classList.remove("modal_opened");
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+}
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -72,7 +80,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopop();
+  closeModal();
 }
 
 /* -------------------------------------------------------------------------- */
@@ -82,14 +90,23 @@ function handleProfileEditSubmit(e) {
 profileEditBtn.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
-  profileEditModal.classList.add("modal_opened");
+
+  openModal(profileEditModal);
+});
+
+cardEditForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 });
 
 cardsEditBtn.addEventListener("click", () => {
-  profileEditModal.classList.add("modal_opened");
+  openModal(cardsEditModal);
 });
 
-formExitBtn.addEventListener("click", closePopop);
+cardExitBtn.addEventListener("click", () => {
+  closeModal(cardsEditModal);
+});
+
+profileExitBtn.addEventListener("click", () => closeModal(profileEditModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
