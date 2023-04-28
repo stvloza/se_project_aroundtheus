@@ -33,7 +33,6 @@ const initialCards = [
 
 const profileEditBtn = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const formExitBtn = profileEditModal.querySelector("#form-exit-button");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -41,7 +40,10 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 const profileEditForm = profileEditModal.querySelector("#modal-form");
+const formExitBtn = profileEditModal.querySelector("#form-exit-button");
 const cardsListEl = document.querySelector(".cards__list");
+const cardsEditModal = document.querySelector("#profile-edit-modal");
+const cardsEditBtn = document.querySelector("#add-button");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -83,11 +85,15 @@ profileEditBtn.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened");
 });
 
+cardsEditBtn.addEventListener("click", () => {
+  profileEditModal.classList.add("modal_opened");
+});
+
 formExitBtn.addEventListener("click", closePopop);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-initialCards.forEach((cardData) => {
+/* initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsListEl.prepend(cardElement);
 });
@@ -98,7 +104,23 @@ initialCards.forEach((cardData) => {
 
 /*const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
+*/
 
-initialCards.forEach(function (obj) {
-  console.log(obj);
-}); /
+initialCards.forEach(function (cardData) {
+  // clone template
+  const cardEl = cardTemplate.cloneNode(true);
+
+  // find .card__image
+  const imageEl = cardEl.querySelector(".card__image");
+
+  // find card__title
+  const titleEl = cardEl.querySelector(".card__title");
+  // replace image src
+  imageEl.src = cardData.link;
+  // replace image alt
+  imageEl.alt = cardData.title;
+  // replace card title
+  titleEl.textContent = cardData.name;
+  // append it to list
+  cardsListEl.appendChild(cardEl);
+});
