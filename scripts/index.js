@@ -97,7 +97,6 @@ function getCardView(cardData) {
     cardLikeBtn.classList.toggle("card__like-button_active");
   });
   // add event listener delete
-  //cardEl.remove();
   const cardDeleteBtn = cardEl.querySelector(".card__delete-button");
   cardDeleteBtn.addEventListener("click", () => {
     cardEl.remove();
@@ -115,14 +114,12 @@ initialCards.forEach(function (cardData) {
   const cardView = getCardView(cardData);
   renderCard(cardView, cardsListEl);
 });
-/* -------------------------------------------------------------------------- */
-/*                               Event Handlers                               */
-/* -------------------------------------------------------------------------- */
+
 function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closeModal();
+  closeModal(profileEditModal);
 }
 
 /* -------------------------------------------------------------------------- */
