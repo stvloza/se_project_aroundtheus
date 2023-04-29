@@ -27,15 +27,17 @@
   border-bottom-right-radius: 10px;
 }
 
-.card__like-button {
-  background: transparent url(../images/heart_logo_black.svg);
+.card__like-button_active {
+  background: transparent url(../images/Union.svg) !important;
+  background-size: cover;
   width: 21px;
   height: 18px;
   border: none;
 }
 
-.card__like-button_active {
+.card__like-button {
   background: transparent url(../images/heart_logo_black.svg);
+  background-size: cover;
   width: 21px;
   height: 18px;
   border: none;

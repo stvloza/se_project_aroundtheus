@@ -96,7 +96,7 @@ function getCardView(cardData) {
   const cardLikeBtn = cardEl.querySelector(".card__like-button");
   cardLikeBtn.addEventListener("click", () => {
     //add active class to cardLikeBtn
-    cardLikeBtn.classList.toggle(".card__like-button_active");
+    cardLikeBtn.classList.toggle("card__like-button_active");
   });
   // add event listener delete
   //cardEl.remove();
