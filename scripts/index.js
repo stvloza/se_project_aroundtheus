@@ -41,13 +41,11 @@ const profileDescriptionInput = document.querySelector(
 );
 const profileEditForm = profileEditModal.querySelector("#modal-form");
 const profileExitBtn = profileEditModal.querySelector("#form-exit-button");
-
 const cardsListEl = document.querySelector(".cards__list");
 const cardsEditModal = document.querySelector("#cards-edit-modal");
 const cardsEditBtn = document.querySelector("#add-button");
 const cardExitBtn = cardsEditModal.querySelector("#card-exit-button");
 const cardEditForm = cardsEditModal.querySelector("#modal-card-form");
-
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
