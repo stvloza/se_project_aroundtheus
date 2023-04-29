@@ -73,6 +73,47 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
+function renderCard(cardEl, container) {
+  // append it to list
+  container.prepend(cardEl);
+}
+
+function getCardView(cardData) {
+  //clone template
+  const cardEl = cardTemplate.cloneNode(true);
+  // find .card__image
+  const imageEl = cardEl.querySelector(".card__image");
+  // find card__title
+  const titleEl = cardEl.querySelector(".card__title");
+  // replace image src
+  imageEl.src = cardData.link;
+  // replace image alt
+  imageEl.alt = cardData.title;
+  // replace card title
+  titleEl.textContent = cardData.name;
+
+  //add event listener for like
+  const cardLikeBtn = cardEl.querySelector(".card__like-button");
+  cardLikeBtn.addEventListener("click", () => {
+    //add active class to cardLikeBtn
+    cardLikeBtn.classList.toggle(".card__like-button_active");
+  });
+  // add event listener delete
+  //cardEl.remove();
+
+  //add evenent listner image
+  //open modal
+  //find image element inside modal
+  //replace src with card liink
+  //replace alt with card title
+
+  return cardEl;
+}
+
+initialCards.forEach(function (cardData) {
+  const cardView = getCardView(cardData);
+  renderCard(cardView, cardsListEl);
+});
 /* -------------------------------------------------------------------------- */
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
@@ -96,6 +137,11 @@ profileEditBtn.addEventListener("click", () => {
 
 cardEditForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  const name = e.target.title.value;
+  const link = e.target.link.value;
+  const cardView = getCardView({ name, link });
+  renderCard(cardView, cardsListEl);
+  closeModal(cardsEditModal);
 });
 
 cardsEditBtn.addEventListener("click", () => {
@@ -109,35 +155,3 @@ cardExitBtn.addEventListener("click", () => {
 profileExitBtn.addEventListener("click", () => closeModal(profileEditModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-
-/* initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardsListEl.prepend(cardElement);
-});
-
-/* -------------------------------------------------------------------------- */
-/*                                  Template                                  */
-/* -------------------------------------------------------------------------- */
-
-/*const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
-*/
-
-initialCards.forEach(function (cardData) {
-  // clone template
-  const cardEl = cardTemplate.cloneNode(true);
-
-  // find .card__image
-  const imageEl = cardEl.querySelector(".card__image");
-
-  // find card__title
-  const titleEl = cardEl.querySelector(".card__title");
-  // replace image src
-  imageEl.src = cardData.link;
-  // replace image alt
-  imageEl.alt = cardData.title;
-  // replace card title
-  titleEl.textContent = cardData.name;
-  // append it to list
-  cardsListEl.appendChild(cardEl);
-});

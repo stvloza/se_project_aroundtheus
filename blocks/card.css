@@ -34,6 +34,13 @@
   border: none;
 }
 
+.card__like-button_active {
+  background: transparent url(../images/heart_logo_black.svg);
+  width: 21px;
+  height: 18px;
+  border: none;
+}
+
 .card__title {
   max-width: 220px;
   font-size: 24px;
