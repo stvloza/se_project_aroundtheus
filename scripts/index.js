@@ -98,7 +98,10 @@ function getCardView(cardData) {
   });
   // add event listener delete
   //cardEl.remove();
-
+  const cardDeleteBtn = cardEl.querySelector(".card__delete-button");
+  cardDeleteBtn.addEventListener("click", () => {
+    cardEl.remove();
+  });
   //add evenent listner image
   //open modal
   //find image element inside modal
