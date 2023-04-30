@@ -18,6 +18,7 @@
   visibility: visible;
   pointer-events: all;
   opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__container {
