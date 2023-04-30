@@ -46,6 +46,10 @@ const cardsEditModal = document.querySelector("#cards-edit-modal");
 const cardsEditBtn = document.querySelector("#add-button");
 const cardExitBtn = cardsEditModal.querySelector("#card-exit-button");
 const cardEditForm = cardsEditModal.querySelector("#modal-card-form");
+const previewImageModalWindow = document.querySelector("#preview-modal");
+const previewImageElement = document.querySelector(".modal__preview-image");
+const previewImageTitle = document.querySelector(".modal__label");
+const previewImageExitBtn = document.querySelector("#preview-exit-button");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
@@ -103,6 +107,17 @@ function getCardView(cardData) {
   });
   //add evenent listner image
   //open modal
+  imageEl.addEventListener("click", function () {
+    previewImageElement.src = cardData.link;
+    previewImageElement.alt = cardData.title;
+    previewImageTitle.textContent = cardData.name;
+    openModal(previewImageModalWindow);
+  });
+
+  previewImageExitBtn.addEventListener("click", () => {
+    closeModal(previewImageModalWindow);
+  });
+
   //find image element inside modal
   //replace src with card liink
   //replace alt with card title

@@ -5,6 +5,11 @@
   border-top-right-radius: 10px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 .card {
   flex-direction: column;
   border-radius: 10px;
