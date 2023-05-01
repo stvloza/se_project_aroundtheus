@@ -1,3 +1,7 @@
+.form {
+  width: 430px;
+}
+
 .form__button-exit {
   position: absolute;
   background: transparent url(../images/close.svg) center no-repeat;
@@ -18,7 +22,7 @@
   display: flex;
   flex-direction: column;
   border: none;
-  height: 300px;
+  height: 330px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -39,7 +43,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0;
   margin: 0px 36px 29.74px;
-  width: 358px;
+  width: 83.255814%;
   height: 27.26px;
   gap: 29.74px;
 }
@@ -51,7 +55,7 @@
   background-color: #000;
   font-size: 18px;
   line-height: 1.2;
-  width: 358px;
+  width: 83%;
   height: 50.15px;
   margin: 18.26px 36.51px 6.51px;
   cursor: pointer;
@@ -62,6 +66,10 @@
 }
 
 @media screen and (max-width: 620px) {
+  .form {
+    width: 282px;
+  }
+
   .form__button-exit {
     background: transparent url(../images/close__mobile.svg) center no-repeat;
     width: 26px;
@@ -71,7 +79,7 @@
 
   .form__fieldset {
     margin-left: 22px;
-    width: 238px;
+    width: 100%;
   }
 
   .form__label {
