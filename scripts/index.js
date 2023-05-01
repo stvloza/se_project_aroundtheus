@@ -146,7 +146,6 @@ profileEditBtn.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
 
   openModal(profileEditModal);
-  profileEditForm.reset();
 });
 
 cardEditForm.addEventListener("submit", (e) => {
