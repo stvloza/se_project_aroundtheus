@@ -81,43 +81,32 @@ function renderCard(cardEl, container) {
 }
 
 function getCardView(cardData) {
-  //clone template
   const cardEl = cardTemplate.cloneNode(true);
-  // find .card__image
+
   const imageEl = cardEl.querySelector(".card__image");
-  // find card__title
+
   const titleEl = cardEl.querySelector(".card__title");
-  // replace image src
+
   imageEl.src = cardData.link;
-  // replace image alt
+
   imageEl.alt = cardData.title;
-  // replace card title
+
   titleEl.textContent = cardData.name;
 
-  //add event listener for like
   const cardLikeBtn = cardEl.querySelector(".card__like-button");
   cardLikeBtn.addEventListener("click", () => {
-    //add active class to cardLikeBtn
     cardLikeBtn.classList.toggle("card__like-button_active");
   });
-  // add event listener delete
   const cardDeleteBtn = cardEl.querySelector(".card__delete-button");
   cardDeleteBtn.addEventListener("click", () => {
     cardEl.remove();
   });
-  //add evenent listner image
-  //open modal
   imageEl.addEventListener("click", function () {
     previewImageElement.src = cardData.link;
     previewImageElement.alt = cardData.title;
     previewImageTitle.textContent = cardData.name;
     openModal(previewImageModalWindow);
   });
-
-  //find image element inside modal
-  //replace src with card liink
-  //replace alt with card title
-
   return cardEl;
 }
 
