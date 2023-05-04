@@ -65,16 +65,6 @@ function openModal(modal) {
   modal.classList.add("modal_opened");
 }
 
-/* function getCardElement(cardData) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  cardTitleEl.textContent = cardData.name;
-  cardImageEl.alt = cardTitleEl.textContent;
-  cardImageEl.src = cardData.link;
-  return cardElement;
-} */
-
 function renderCard(cardEl, container) {
   // append it to list
   container.prepend(cardEl);
