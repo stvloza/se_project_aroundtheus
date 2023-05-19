@@ -152,7 +152,3 @@ cardExitBtn.addEventListener("click", () => {
 profileExitBtn.addEventListener("click", () => closeModal(profileEditModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-
-/* -------------------------------------------------------------------------- */
-/*                               End                              */
-/* -------------------------------------------------------------------------- */
