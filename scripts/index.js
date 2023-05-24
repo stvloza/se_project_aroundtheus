@@ -153,6 +153,8 @@ profileExitBtn.addEventListener("click", () => closeModal(profileEditModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
+console.log();
+
 /* -------------------------------------------------------------------------- */
 /*                                     End                                    */
 /* -------------------------------------------------------------------------- */
