@@ -60,10 +60,10 @@
         ></button>
         <fieldset class="form__fieldset">
           <h2 class="form__label">Edit profile</h2>
-          <form class="form__block" id="modal-form" name="form">
+          <form class="form__block popup__form" id="modal-form" name="form">
             <input
               type="text"
-              class="form__input"
+              class="form__input popup__input"
               name="title"
               id="profile-title-input"
               placeholder="Name"
@@ -71,7 +71,7 @@
             />
             <input
               type="text"
-              class="form__input"
+              class="form__input popup__input"
               name="description"
               id="profile-description-input"
               placeholder="Description"
@@ -92,10 +92,14 @@
         ></button>
         <div class="form__fieldset">
           <h2 class="form__label">New Place</h2>
-          <form class="form__block" id="modal-card-form" name="form">
+          <form
+            class="form__block popup__form"
+            id="modal-card-form"
+            name="form"
+          >
             <input
               type="text"
-              class="form__input"
+              class="form__input popup__input"
               name="title"
               id="card-title-input"
               placeholder="Title"
@@ -103,7 +107,7 @@
             />
             <input
               type="url"
-              class="form__input"
+              class="form__input popup__input"
               name="link"
               id="card-description-input"
               placeholder="Image Link"
@@ -138,5 +142,6 @@
       </li>
     </template>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
   </body>
 </html>
