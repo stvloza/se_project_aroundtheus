@@ -6,11 +6,11 @@
   line-height: 15px;
 }
 
-.popup__error__name {
+.popup__error-name {
   bottom: 185px;
 }
 
-.popup__error__about {
+.popup__error-about {
   bottom: 125px;
 }
 
@@ -18,7 +18,7 @@
   border-bottom: 1px solid red;
 }
 
-.popup__button_disabled {
+.popup__button-disabled {
   opacity: 20%;
   cursor: not-allowed;
 }
