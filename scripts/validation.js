@@ -69,3 +69,24 @@ const config = {
 };
 
 enableValidation(config);
+
+profileEditModal.addEventListener("mousedown", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("modal_opened")) {
+    closeModal(profileEditModal);
+  }
+});
+
+cardsEditModal.addEventListener("mousedown", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("modal_opened")) {
+    closeModal(cardsEditModal);
+  }
+});
+
+previewImageModalWindow.addEventListener("mousedown", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("modal_opened")) {
+    closeModal(previewImageModalWindow);
+  }
+});
