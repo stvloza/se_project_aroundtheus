@@ -68,7 +68,15 @@
               id="profile-title-input"
               placeholder="Name"
               required
+              maxlength="40"
+              minlength="2"
             />
+            <span
+              class="popup__error popup__error__name"
+              id="profile-title-input-error"
+            >
+              This is a test Error
+            </span>
             <input
               type="text"
               class="form__input popup__input"
@@ -76,7 +84,14 @@
               id="profile-description-input"
               placeholder="Description"
               required
+              maxlength="200"
+              minlength="2"
             />
+            <span
+              class="popup__error popup__error__about"
+              id="profile-description-input-error"
+              >This is a test Error
+            </span>
             <button class="form__button-submit" type="submit">Save</button>
           </form>
         </fieldset>
