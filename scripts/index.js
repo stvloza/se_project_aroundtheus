@@ -61,21 +61,17 @@ const cardTemplate =
 /*                                 Functions                                  */
 /* -------------------------------------------------------------------------- */
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-}
-
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeModal(modal);
-    }
-  });
+  document.addEventListener("keydown", closeByEscape);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeByEscape);
 }
 
 function renderCard(cardEl, container) {
-  // append it to list
   container.prepend(cardEl);
 }
 

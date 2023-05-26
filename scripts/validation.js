@@ -90,3 +90,10 @@ previewImageModalWindow.addEventListener("mousedown", (e) => {
     closeModal(previewImageModalWindow);
   }
 });
+
+const closeByEscape = (evt) => {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    closeModal(openedPopup);
+  }
+};
