@@ -69,33 +69,3 @@ const config = {
 };
 
 enableValidation(config);
-
-profileEditModal.addEventListener("mousedown", (e) => {
-  console.log(e.target);
-  if (e.target.classList.contains("modal_opened")) {
-    closeModal(profileEditModal);
-  }
-});
-
-cardsEditModal.addEventListener("mousedown", (e) => {
-  console.log(e.target);
-  if (e.target.classList.contains("modal_opened")) {
-    closeModal(cardsEditModal);
-  }
-});
-
-previewImageModalWindow.addEventListener("mousedown", (e) => {
-  console.log(e.target);
-  if (e.target.classList.contains("modal_opened")) {
-    closeModal(previewImageModalWindow);
-  }
-});
-
-const closeByEscape = (evt) => {
-  if (evt.key === "Escape") {
-    const openedPopup = document.querySelector(".modal_opened");
-    closeModal(openedPopup);
-  }
-};
-
-// End

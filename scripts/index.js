@@ -132,6 +132,10 @@ profileEditBtn.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
+const addCardSubmitButton = document.getElementById("addCardSubmitButton");
+const cardTitleInput = document.getElementById("card-title-input");
+const cardUrlInput = document.getElementById("card-description-input");
+
 cardEditForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target.title.value;
@@ -140,6 +144,11 @@ cardEditForm.addEventListener("submit", (e) => {
   renderCard(cardView, cardsListEl);
   closeModal(cardsEditModal);
   cardEditForm.reset();
+  toggleButtonState(
+    [cardTitleInput, cardUrlInput],
+    addCardSubmitButton,
+    config
+  );
 });
 
 cardsEditBtn.addEventListener("click", () => {
@@ -154,6 +163,34 @@ profileExitBtn.addEventListener("click", () => closeModal(profileEditModal));
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
-/* -------------------------------------------------------------------------- */
-/*                                     End                                    */
-/* -------------------------------------------------------------------------- */
+//
+
+profileEditModal.addEventListener("mousedown", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("modal_opened")) {
+    closeModal(profileEditModal);
+  }
+});
+
+cardsEditModal.addEventListener("mousedown", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("modal_opened")) {
+    closeModal(cardsEditModal);
+  }
+});
+
+previewImageModalWindow.addEventListener("mousedown", (e) => {
+  console.log(e.target);
+  if (e.target.classList.contains("modal_opened")) {
+    closeModal(previewImageModalWindow);
+  }
+});
+
+const closeByEscape = (evt) => {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    closeModal(openedPopup);
+  }
+};
+
+// End
