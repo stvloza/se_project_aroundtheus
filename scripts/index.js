@@ -192,3 +192,5 @@ const closeByEscape = (evt) => {
     closeModal(openedPopup);
   }
 };
+
+//end
