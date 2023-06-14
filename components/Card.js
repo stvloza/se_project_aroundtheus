@@ -1,3 +1,25 @@
+const previewImageModalWindow = document.querySelector("#preview-modal");
+const previewImageElement = document.querySelector(".modal__preview-image");
+const previewImageTitle = document.querySelector(".modal__label");
+const ESC_KEYCODE = 27;
+
+const closeModal = (modal) => {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeByEscape);
+};
+
+const handleEscUp = (evt) => {
+  evt.preventDefault();
+  isEscEvent(evt, closeModalWindow);
+};
+
+const isEscEvent = (evt, action) => {
+  const activatePopup = document.querySelector(".modal_opened");
+  if (evt.which === ESC_KEYCODE) {
+    action(activatePopup);
+  }
+};
+
 export default class Card {
   constructor(cardData, cardSelector) {
     this._name = cardData.name;
@@ -29,7 +51,12 @@ export default class Card {
     this._cardEl = null;
   }
 
-  _handlePreviewPicture() {}
+  _handlePreviewPicture() {
+    previewImageElement.src = cardData.link;
+    previewImageElement.alt = cardData.title;
+    previewImageTitle.textContent = cardData.name;
+    openModal(previewImageModalWindow);
+  }
 
   _getTemplate() {
     return document
