@@ -22,3 +22,7 @@
   opacity: 20%;
   cursor: not-allowed;
 }
+
+.popup__button:hover:not(:disabled) {
+  opacity: 0.8;
+}
