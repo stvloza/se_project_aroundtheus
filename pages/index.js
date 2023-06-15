@@ -62,27 +62,26 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const addCardSubmitButton = document.getElementById("addCardSubmitButton");
+//const addCardSubmitButton = document.getElementById("addCardSubmitButton");
 const cardTitleInput = document.getElementById("card-title-input");
 const cardUrlInput = document.getElementById("card-description-input");
 const profileEditForm = profileEditModal.querySelector("#modal-form");
-const profileExitBtn = profileEditModal.querySelector("#form-exit-button");
+//const profileExitBtn = profileEditModal.querySelector("#form-exit-button");
 const cardsListEl = document.querySelector(".cards__list");
 const cardsEditModal = document.querySelector("#cards-edit-modal");
 const cardsEditBtn = document.querySelector("#add-button");
-const cardExitBtn = cardsEditModal.querySelector("#card-exit-button");
+//const cardExitBtn = cardsEditModal.querySelector("#card-exit-button");
 const cardEditForm = cardsEditModal.querySelector("#modal-card-form");
-const previewImageExitBtn = document.querySelector("#preview-exit-button");
+//const previewImageExitBtn = document.querySelector("#preview-exit-button");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
-const cardSelector = "#card-template";
 
 /* -------------------------------------------------------------------------- */
 /*                                 Functions                                */
 /* -------------------------------------------------------------------------- */
 
 const renderCard = (cardData) => {
-  const card = new Card(cardData, cardSelector);
+  const card = new Card(cardData, "#card-template");
   const cardEl = card.getView();
   cardsListEl.prepend(cardEl);
 };
