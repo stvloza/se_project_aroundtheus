@@ -1,11 +1,11 @@
 class FormValidator {
-  constructor(config, formEl) {
+  constructor(config, _formEl) {
     this._inputSelector = config.inputSelector;
     this._submitButtonSelector = config.submitButtonSelector;
     this._inactiveButtonClass = config.inactiveButtonClass;
     this._inputErrorClass = config.inputErrorClass;
     this._errorClass = config.errorClass;
-    this._form = formEl;
+    this._formEl = _formEl;
   }
 
   _showInputError(inputEl) {
@@ -63,10 +63,10 @@ class FormValidator {
     });
 
     this._formEl.addEventListener("submit", (evt) => {
-      e.preventDefault();
+      evt.preventDefault();
     });
 
-    this._setEventListeners(this, formEl);
+    this._setEventListeners(this._formEl);
   }
 }
 

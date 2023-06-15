@@ -35,7 +35,7 @@ const initialCards = [
   },
 ];
 
-const config = {
+const FormValidatorConfig = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".form__button-submit",
@@ -92,7 +92,7 @@ const renderCard = (cardData) => {
 /* -------------------------------------------------------------------------- */
 
 const handleProfileEditSubmit = (evt) => {
-  e.preventDefault();
+  evt.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closeModal(profileEditModal);
@@ -100,7 +100,7 @@ const handleProfileEditSubmit = (evt) => {
 };
 
 const handleAddCardFormSubmit = (evt) => {
-  e.preventDefault();
+  evt.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardsListEl);
@@ -122,7 +122,7 @@ profileEditBtn.addEventListener("click", () => {
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 cardEditForm.addEventListener("submit", handleAddCardFormSubmit);
 
-profileEditBtn.addEventListener("click", () => {
+cardsEditBtn.addEventListener("click", () => {
   openModal(cardsEditModal);
 });
 
@@ -130,10 +130,13 @@ initialCards.forEach((cardData) => {
   renderCard(cardData);
 });
 
-const addFormValidator = new FormValidator(config, cardEditForm);
+const addFormValidator = new FormValidator(FormValidatorConfig, cardEditForm);
 
 addFormValidator.enableValidation();
 
-const editFormValidator = new FormValidator(config, profileEditForm);
+const editFormValidator = new FormValidator(
+  FormValidatorConfig,
+  profileEditForm
+);
 
 editFormValidator.enableValidation();
