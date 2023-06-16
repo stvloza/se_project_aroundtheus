@@ -60,3 +60,32 @@
     padding-bottom: 22px;
   }
 }
+
+.modal__error {
+  color: #ff0000;
+  font-size: 12px;
+  position: absolute;
+  left: 36px;
+  line-height: 15px;
+}
+
+.modal__error-name {
+  bottom: 185px;
+}
+
+.modal__error-about {
+  bottom: 125px;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px solid red;
+}
+
+.modal__button-disabled {
+  opacity: 20%;
+  cursor: not-allowed;
+}
+
+.modal__button:hover:not(:disabled) {
+  opacity: 0.8;
+}
