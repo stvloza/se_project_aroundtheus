@@ -32,9 +32,7 @@
               id="profile-edit-button"
               type="button"
             ></button>
-            <p class="profile__description">
-              Aspiring Software Engineer / Wanderluster
-            </p>
+            <p class="profile__description">Software Engineer</p>
           </div>
           <button
             class="profile__add-button"
@@ -54,7 +52,7 @@
     </div>
 
     <div class="modal" id="profile-edit-modal">
-      <div class="modal modal__container form">
+      <div class="popup modal__container form">
         <button
           class="form__button-exit"
           type="button"
@@ -62,10 +60,10 @@
         ></button>
         <fieldset class="form__fieldset">
           <h2 class="form__label">Edit profile</h2>
-          <form class="form__block modal__form" id="modal-form" name="form">
+          <form class="form__block popup__form" id="modal-form" name="form">
             <input
               type="text"
-              class="form__input modal__input"
+              class="form__input popup__input"
               name="title"
               id="profile-title-input"
               placeholder="Name"
@@ -74,13 +72,13 @@
               minlength="2"
             />
             <span
-              class="modal__error modal__error-name"
+              class="popup__error popup__error-name"
               id="profile-title-input-error"
             >
             </span>
             <input
               type="text"
-              class="form__input modal__input"
+              class="form__input popup__input"
               name="description"
               id="profile-description-input"
               placeholder="Description"
@@ -89,7 +87,7 @@
               minlength="2"
             />
             <span
-              class="modal__error modal__error-about"
+              class="popup__error popup__error-about"
               id="profile-description-input-error"
             >
             </span>
@@ -100,7 +98,7 @@
     </div>
 
     <div class="modal" id="cards-edit-modal">
-      <div class="modal__container form modal">
+      <div class="modal__container form popup">
         <button
           class="form__button-exit"
           type="button"
@@ -109,13 +107,13 @@
         <div class="form__fieldset">
           <h2 class="form__label">New Place</h2>
           <form
-            class="form__block modal__form"
+            class="form__block popup__form"
             id="modal-card-form"
             name="form"
           >
             <input
               type="text"
-              class="form__input modal__input"
+              class="form__input popup__input modal__input_type_title"
               name="title"
               id="card-title-input"
               placeholder="Title"
@@ -124,25 +122,25 @@
               maxlength="30"
             />
             <span
-              class="modal__error modal__error-name"
+              class="popup__error popup__error-name"
               id="card-title-input-error"
             >
             </span>
             <input
               type="url"
-              class="form__input modal__input"
+              class="form__input popup__input modal__input_type_url"
               name="link"
               id="card-description-input"
               placeholder="Image Link"
               required
             />
             <span
-              class="modal__error modal__error-about"
+              class="popup__error popup__error-about"
               id="card-description-input-error"
             >
             </span>
             <button
-              class="modal__button-disabled form__button-submit modal__button"
+              class="popup__button-disabled form__button-submit popup__button"
               type="submit"
               id="addCardSubmitButton"
               disabled
@@ -176,10 +174,6 @@
         </div>
       </li>
     </template>
-    <script type="module" src="./pages/index.js" defer></script>
-
-    <!-- <script type="module" src="./components/validation.js" defer></script> -->
+    <script src="./pages/index.js" type="module" defer></script>
   </body>
 </html>
-
-<!--Needs to change to new version->

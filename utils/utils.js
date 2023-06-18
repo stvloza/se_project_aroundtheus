@@ -1,28 +1,27 @@
-const closeByEscape = (evt) => {
-  if (evt.key === "Escape") {
-    closeModal(document.querySelector(".modal_opened"));
+function closeByEscapeKeyHandler(e) {
+  if (e.key === "Escape") {
+    closePopup(document.querySelector(".modal_opened"));
   }
-};
-
-const closeByMouseDown = (evt) => {
+}
+function closeByMouseDown(e) {
   if (
-    evt.target.classList.contains("modal") ||
-    evt.target.classList.contains("form__button-exit")
+    e.target.classList.contains("form__button-exit") ||
+    e.target.classList.contains("modal")
   ) {
-    closeModal(evt.target.closest(".modal"));
+    closePopup(e.target.closest(".modal"));
   }
-};
+}
 
-const openModal = (modal) => {
-  document.addEventListener("keydown", closeByEscape);
+function openModal(modal) {
+  document.addEventListener("keydown", closeByEscapeKeyHandler);
   modal.addEventListener("mousedown", closeByMouseDown);
   modal.classList.add("modal_opened");
-};
+}
 
-const closeModal = (modal) => {
-  document.removeEventListener("keydown", closeByEscape);
+function closePopup(modal) {
+  document.removeEventListener("keydown", closeByEscapeKeyHandler);
   modal.removeEventListener("mousedown", closeByMouseDown);
   modal.classList.remove("modal_opened");
-};
+}
 
-export { closeByEscape, openModal, closeModal };
+export { closeByEscapeKeyHandler, openModal, closePopup };

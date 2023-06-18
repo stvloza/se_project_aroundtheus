@@ -18,10 +18,6 @@
   opacity: 0.6;
 }
 
-.form__button:hover:not(:disabled) {
-  opacity: 0.8;
-}
-
 .form__fieldset {
   display: flex;
   flex-direction: column;
