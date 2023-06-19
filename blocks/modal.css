@@ -32,7 +32,6 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 450px;
 }
 
 .modal__container_type_preview {
