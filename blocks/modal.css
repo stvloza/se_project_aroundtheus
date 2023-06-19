@@ -2,8 +2,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
-  left: 0;
-  padding: 0;
   height: 100vh;
   min-width: 100%;
   z-index: 2;
@@ -23,15 +21,11 @@
 
 .modal__container {
   background-color: #fff;
-  width: 430px;
   max-width: 100%;
   border-radius: 10px;
   padding-bottom: 30px;
   position: relative;
   margin: auto;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
 }
 
 .modal__container_type_preview {
