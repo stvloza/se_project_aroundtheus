@@ -35,7 +35,7 @@ const initialCards = [
   },
 ];
 const formValidatorConfig = {
-  inputSelector: ".modal__input",
+  inputSelector: ".form__input",
   submitButtonSelector: ".form__button-submit",
   inactiveButtonClass: ".popup__button-disabled",
   inputErrorClass: ".popup__input_type_error",

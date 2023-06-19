@@ -63,6 +63,13 @@
 
 .form__button-submit:hover {
   opacity: 0.8;
+  cursor: pointer;
+}
+
+.form__button-disabled {
+  opacity: 20%;
+  cursor: not-allowed;
+  transition: 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 620px) {
