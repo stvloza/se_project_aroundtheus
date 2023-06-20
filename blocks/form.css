@@ -63,7 +63,7 @@
 
 .form__button-submit:hover:not(:disabled) {
   opacity: 0.8;
-  cursor: none;
+  cursor: pointer;
 }
 
 .form__button-disabled {
