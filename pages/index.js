@@ -107,6 +107,7 @@ function handleAddCardFormSubmit(e) {
 
   closePopup(cardsEditModal);
   cardEditForm.reset();
+  addFormValidator.toggleButtonState();
 }
 
 /* -------------------------------------------------------------------------- */
