@@ -139,7 +139,3 @@ const editFormValidator = new FormValidator(
   profileEditForm
 );
 editFormValidator.enableValidation();
-
-/* -------------------------------------------------------------------------- */
-/*                                     End                                    */
-/* -------------------------------------------------------------------------- */
