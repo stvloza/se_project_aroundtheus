@@ -1,1 +1,3 @@
-class Section {}
+class Section {
+  constructor() {}
+}
