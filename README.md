@@ -67,7 +67,7 @@ Contributions to the project are welcome! If you would like to contribute, pleas
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Submit a pull request
 
-Please ensure that your code adheres to the project's coding standards and guidelines.
+Please ensure that your code adheres to the project's coding standards and guidelines
 
 ## License
 
