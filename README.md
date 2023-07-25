@@ -1,6 +1,6 @@
 🌎 **Project 3: Around The U.S.** 
 
-Welcome to the "Around The U.S." project! 🎉 This project aims to create an interactive website where users can explore various locations in the United States and share their own favorite places. The website allows users to view and add location cards, edit their profile information, and interact with the content.
+Welcome to the "Around The U.S." project! 🎉 This project aims to create an interactive website where users can explore various locations in the United States and share their own favorite places. The website allows users to view and add location cards, edit their profile information, and interact with the content
 
 ## Table of Contents
 
