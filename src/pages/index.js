@@ -1,7 +1,8 @@
 /* -------------------------------------------------------------------------- */
 /*                                   Imports                                  */
 /* -------------------------------------------------------------------------- */
-
+import PopupWithConfirm from "../components/PopupWithConfirm.js";
+import Api from "../components/Api.js";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import "../pages/index.css";
@@ -24,13 +25,59 @@ import {
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
+const BACKEND_URL = "https://around-api.en.tripleten-services.com/v1";
+//API
+
+const api = new Api({
+  baseUrl: BACKEND_URL,
+  headers: {
+    authorization: "bf54a6ce-ba6a-4742-a5e8-9bdd0fb7708a",
+    "Content-Type": "application/json",
+  },
+});
+
+let cardSection;
+let userId;
 
 // User information
-export const userInfo = new UserInfo(
+const userInfo = new UserInfo(
   document.querySelector(".profile__title"),
-  document.querySelector(".profile__description")
+  document.querySelector(".profile__description"),
+  document.querySelector(".profile__image")
 );
 
+// User Info
+Promise.all([api.getUserInfo()])
+  .then(([userData]) => {
+    userInfo.setUserInfo(userData.name, userData.about);
+    userInfo.setUserAvatar(userData.avatar);
+    // userId = userData._id;
+  })
+  .catch(console.error);
+
+const cardDeletePopup = new PopupWithConfirm("#modal-card-delete");
+
+//setUser info
+
+// Promise.all(api.setUserInfo(profileTitleInput, profileDescriptionInput));
+
+//Get Cards
+Promise.all([api.getInitialCards()])
+  .then(([initialCards]) => {
+    console.log(initialCards);
+    cardSection = new Section(
+      {
+        items: initialCards,
+        renderer: (cardData) => {
+          const cardElement = renderCard(cardData);
+          cardSection.addItem(cardElement);
+        },
+      },
+      cardsWrap
+    );
+    cardSection.renderItems();
+  })
+  .catch(console.error);
 // Popup for image preview
 export const previewImagePopup = new PopupWithImage("#preview-modal");
 
@@ -66,23 +113,45 @@ profileEditButton.addEventListener("click", () => {
   editPopupForm.open();
 });
 
-// Function to render a card
+//to render a card
 function renderCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleCardImageClick);
-  section.addItem(card.getCardElement());
+  const cardElement = new Card(
+    cardData,
+    "#card-template",
+    handleCardImageClick,
+    function handleDeleteClick() {
+      cardDeletePopup.setSubmitAction(() => {
+        // cardDeletePopup.setLoading(true);
+        api
+          .removeCard(cardData._id)
+          .then((res) => {
+            console.log("here");
+            // cardElement.removeCardElement(res._id);
+            // cardDeletePopup.close();
+          })
+          .catch(console.error)
+          .finally(() => {
+            // cardDeletePopup.setLoading(false);
+          });
+      });
+      cardDeletePopup.open();
+    }
+  );
+  // section.addItem(card.getCardElement());
+  return cardElement.getCardElement();
 }
 
-// Section for managing cards
-const section = new Section(
-  {
-    items: initialCards,
-    renderer: renderCard,
-  },
-  cardsWrap
-);
+//for managing cards
+// const section = new Section(
+//   {
+//     // items: initialCards,
+//     renderer: renderCard,
+//   },
+//   cardsWrap
+// );
 
-// Render initial cards
-section.renderItems();
+// //Render initial cards
+// section.renderItems();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Handlers                                  */
@@ -91,13 +160,34 @@ section.renderItems();
 // Event handler for profile edit form submission
 function handleEditProfileSubmit(formData) {
   const { nameInfo, jobInfo } = formData;
-  userInfo.setUserInfo(nameInfo, jobInfo);
-  editPopupForm.close();
+  // editProfilePopup.setLoading(true);
+  api
+    .setUserInfo(nameInfo, jobInfo)
+    .then(() => {
+      console.log("here");
+      userInfo.setUserInfo(nameInfo, jobInfo);
+      editPopupForm.close();
+    })
+    .catch(console.error)
+    .finally(() => {
+      // editProfilePopup.setLoading(false);
+    });
 }
 
 // Event handler for add card form submission
 function handleAddCardFormSubmit(inputValues) {
   const { name, link } = inputValues;
+  api
+    .addCard({ name, link })
+    .then((cardData) => {
+      const cardElement = renderCard(cardData);
+      cardSection.prependItem(cardElement);
+      addCardPopupForm.close();
+    })
+    .catch(console.error)
+    .finally(() => {
+      // addCardPopupForm.setLoading(false);
+    });
   renderCard({ name, link });
   addCardPopupForm.close();
 }

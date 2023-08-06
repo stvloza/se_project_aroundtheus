@@ -5,6 +5,7 @@ class Card {
     data,
     templateSelector,
     handleCardImageClick,
+    handleDeleteClick,
     previewImageModal,
     previewDescriptionModal
   ) {
@@ -14,15 +15,25 @@ class Card {
     this._handleCardImageClick = handleCardImageClick; // Function to handle card image click event
     this._previewImageModal = previewImageModal; // Reference to the image preview modal
     this._previewDescriptionModal = previewDescriptionModal; // Reference to the description preview modal
+    this._handleDeleteClick = handleDeleteClick;
   }
 
   // Retrieves the card template from the DOM and clones it
   _getTemplate() {
-    return document
+    this._cardElement = document
       .querySelector(`${this._templateSelector}`)
       .content.querySelector(".card")
       .cloneNode(true);
+    return this._cardElement;
   }
+
+  // _getTemplate() {
+  //   this._cardElement = document
+  //     .querySelector(this._cardTemplateSelector)
+  //     .content.querySelector(".card")
+  //     .cloneNode(true);
+  //   return this._cardElement;
+  // }
 
   // Event handler for the delete button click event
   _handleDeleteButton() {
@@ -50,12 +61,16 @@ class Card {
     // Event listener for the delete button click event
     this._cardElement
       .querySelector(".card__delete-button")
-      .addEventListener("click", () => this._handleDeleteButton());
+      .addEventListener("click", () => this._handleDeleteClick());
 
     // Event listener for the like button click event
     this._cardElement
       .querySelector(".card__like-button")
       .addEventListener("click", () => this._handleLikeButton());
+
+    // this._deleteButton.addEventListener("click", () =>
+    //   this._handleDeleteClick()
+    // );
   }
 
   // Creates and returns the card element
@@ -65,6 +80,9 @@ class Card {
     this._cardElement.querySelector(".card__title").textContent = this._name; // Set the title of the card
     this._cardElement.querySelector(".card__image").src = this._link; // Set the image source of the card
     this._cardElement.querySelector(".card__image").alt = this._name; // Set the alt text of the card image
+    this._deleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
 
     return this._cardElement; // Return the card element
   }

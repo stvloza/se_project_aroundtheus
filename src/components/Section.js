@@ -7,8 +7,16 @@ class Section {
 
   // Renders all items in the section using the provided renderer function
   renderItems() {
-    this._items.forEach(this._renderer); // Iterates over each item and applies the renderer function
+    this._items.forEach((item) => {
+      this._renderer(item);
+    });
   }
+
+  // //renderItems() {
+  //   this._renderedItems.forEach((item) => {
+  //     this._renderer(item);
+  //   });
+  // }
 
   // Adds an item to the end of the section
   addItem(cardElement) {

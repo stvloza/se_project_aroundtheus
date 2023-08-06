@@ -127,11 +127,29 @@
       <div class="modal__preview-image-container">
         <button class="modal__close" id="preview-close-button"></button>
         <img class="modal__preview-image" src="#" alt="" />
-
         <h2 class="modal__preview-description"></h2>
       </div>
     </div>
     <!--Preview image modal-->
+
+    <!-- CARD DELETE CONFIRM MODAL-->
+    <div class="modal" id="modal-card-delete">
+      <div class="modal__container">
+        <button class="modal__button-exit" type="button"></button>
+        <form
+          class="modal__form form"
+          id="delete-modal-form"
+          name="delete-form"
+        >
+          <h2 class="form__label form__label_type_delete modal__heading">
+            Are you sure?
+          </h2>
+          <button class="form__button form__button_type_delete" type="submit">
+            Yes
+          </button>
+        </form>
+      </div>
+    </div>
 
     <!--Template-->
     <template id="card-template">
@@ -147,4 +165,3 @@
     <!--Template-->
   </body>
 </html>
-<!---->
