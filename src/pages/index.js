@@ -75,9 +75,6 @@ function handleAvatarFormSubmit({ url }) {
       avatarEditPopup.setLoading(false);
     });
 }
-//setUser info
-
-// Promise.all(api.setUserInfo(profileTitleInput, profileDescriptionInput));
 
 //Get Cards
 Promise.all([api.getInitialCards()])
@@ -169,18 +166,6 @@ function renderCard(cardData) {
   // section.addItem(card.getCardElement());
   return cardElement.getCardElement();
 }
-
-//for managing cards
-// const section = new Section(
-//   {
-//     // items: initialCards,
-//     renderer: renderCard,
-//   },
-//   cardsWrap
-// );
-
-// //Render initial cards
-// section.renderItems();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Handlers                                  */

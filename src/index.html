@@ -135,26 +135,31 @@
     </div>
     <!--Preview image modal-->
 
-    <!-- CARD DELETE CONFIRM MODAL-->
-    <div class="modal" id="modal-card-delete">
+    <!-- Card delte confirm modal-->
+    <div class="modal modal__delete-confirm" id="modal-card-delete">
       <div class="modal__container">
-        <button class="modal__button-exit" type="button"></button>
+        <button class="modal__button-exit modal__close" type="button"></button>
         <form
-          class="modal__form form"
+          class="modal__form form modal__delete-form"
           id="delete-modal-form"
           name="delete-form"
         >
-          <h2 class="form__label form__label_type_delete modal__heading">
+          <h2
+            class="form__label form__label_type_delete modal__heading modal__heading-delete"
+          >
             Are you sure?
           </h2>
-          <button class="form__button form__button_type_delete" type="submit">
+          <button
+            class="form__button form__button_type_delete modal__button"
+            type="submit"
+          >
             Yes
           </button>
         </form>
       </div>
     </div>
 
-    <!--Profile Edit Photo Modal-->
+    <!--Profile edit photo modal-->
     <div class="modal" id="modal-avatar-edit">
       <div class="modal__container">
         <button class="modal__close" id="profile-close-button"></button>

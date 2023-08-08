@@ -25,6 +25,7 @@
   border-radius: 10px;
   position: relative;
 }
+
 .modal__close {
   background-image: url(../images/close-icon.svg);
   border: none;
@@ -51,6 +52,10 @@
   line-height: 29px;
   margin: 0;
   padding-bottom: 50px;
+}
+
+.modal__heading-delete {
+  padding: 0;
 }
 .modal__input {
   font-family: "Inter", sans-serif;
