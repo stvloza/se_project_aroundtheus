@@ -20,6 +20,7 @@ class UserInfo {
   }
 
   setUserAvatar(avatar) {
+    console.log(avatar);
     this._avatarElement.src = avatar;
     this._avatarElement.alt = this._nameElement.textContent;
   }

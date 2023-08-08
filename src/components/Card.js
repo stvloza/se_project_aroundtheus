@@ -6,16 +6,24 @@ class Card {
     templateSelector,
     handleCardImageClick,
     handleDeleteClick,
+    handleLikeButtonClick,
     previewImageModal,
     previewDescriptionModal
   ) {
     this._name = data.name; // The name of the card
+
     this._link = data.link; // The image link for the card
+    this.isLiked = data.isLiked;
     this._templateSelector = templateSelector; // The selector for the card's HTML template
     this._handleCardImageClick = handleCardImageClick; // Function to handle card image click event
     this._previewImageModal = previewImageModal; // Reference to the image preview modal
     this._previewDescriptionModal = previewDescriptionModal; // Reference to the description preview modal
     this._handleDeleteClick = handleDeleteClick;
+    this._handleLikeButtonClick = handleLikeButtonClick;
+  }
+
+  removeCardElement() {
+    this._cardElement.remove();
   }
 
   // Retrieves the card template from the DOM and clones it
@@ -39,6 +47,19 @@ class Card {
   _handleDeleteButton() {
     this._cardElement.remove(); // Remove the card element from the DOM
     this._cardElement = null; // Set the card element to null
+  }
+
+  _toggleLikeButton() {
+    if (this.isLiked) {
+      this._likeButton.classList.add("card__like-button_active");
+    } else {
+      this._likeButton.classList.remove("card__like-button_active");
+    }
+  }
+
+  updateLikes(isLiked) {
+    this.isLiked = isLiked;
+    this._toggleLikeButton();
   }
 
   // Event handler for the like button click event
@@ -66,7 +87,7 @@ class Card {
     // Event listener for the like button click event
     this._cardElement
       .querySelector(".card__like-button")
-      .addEventListener("click", () => this._handleLikeButton());
+      .addEventListener("click", () => this._handleLikeButtonClick());
 
     // this._deleteButton.addEventListener("click", () =>
     //   this._handleDeleteClick()
@@ -83,6 +104,8 @@ class Card {
     this._deleteButton = this._cardElement.querySelector(
       ".card__delete-button"
     );
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._toggleLikeButton();
 
     return this._cardElement; // Return the card element
   }

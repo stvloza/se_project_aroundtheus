@@ -55,5 +55,21 @@ export default class Api {
     });
   }
 
-  // other methods for working with the API
+  changeLikeStatus(cardId, isLiked) {
+    return this._request(`${this._baseUrl}/cards/${cardId}/likes`, {
+      method: isLiked ? "DELETE" : "PUT",
+      headers: this._headers,
+    });
+  }
+
+  setUserAvatar(url) {
+    console.log("url:" + url);
+    return this._request(`${this._baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar: url,
+      }),
+    });
+  }
 }
