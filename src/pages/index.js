@@ -21,18 +21,20 @@ import {
   profileAddCardForm,
   cardsWrap,
   avatarEditButton,
+  avatarSubmitButton,
 } from "../utils/constants.js";
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
-const BACKEND_URL = "https://around-api.en.tripleten-services.com/v1";
+const backendURL = "https://around-api.en.tripleten-services.com/v1";
 //API
+const validation = "bf54a6ce-ba6a-4742-a5e8-9bdd0fb7708a";
 
 const api = new Api({
-  baseUrl: BACKEND_URL,
+  baseUrl: backendURL,
   headers: {
-    authorization: "bf54a6ce-ba6a-4742-a5e8-9bdd0fb7708a",
+    authorization: validation,
     "Content-Type": "application/json",
   },
 });
@@ -47,14 +49,50 @@ const userInfo = new UserInfo(
   document.querySelector(".profile__image")
 );
 
-// User Info
-Promise.all([api.getUserInfo()])
-  .then(([userData]) => {
+Promise.all([api.getInitialCards(), api.getUserInfo()])
+  .then(([initialCards, userData]) => {
     userInfo.setUserInfo(userData.name, userData.about);
     userInfo.setUserAvatar(userData.avatar);
     // userId = userData._id;
+    cardSection = new Section(
+      {
+        items: initialCards,
+        renderer: (cardData) => {
+          const cardElement = renderCard(cardData);
+          cardSection.addItem(cardElement);
+        },
+      },
+      cardsWrap
+    );
+    cardSection.renderItems();
   })
   .catch(console.error);
+
+// User Info
+// Promise.all([api.getUserInfo()])
+//   .then(([userData]) => {
+//     userInfo.setUserInfo(userData.name, userData.about);
+//     userInfo.setUserAvatar(userData.avatar);
+//     // userId = userData._id;
+//   })
+//   .catch(console.error);
+
+// //Get Cards
+// Promise.all([api.getInitialCards()])
+//   .then(([initialCards]) => {
+//     cardSection = new Section(
+//       {
+//         items: initialCards,
+//         renderer: (cardData) => {
+//           const cardElement = renderCard(cardData);
+//           cardSection.addItem(cardElement);
+//         },
+//       },
+//       cardsWrap
+//     );
+//     cardSection.renderItems();
+//   })
+//   .catch(console.error);
 
 const cardDeletePopup = new PopupWithConfirm("#modal-card-delete");
 const avatarEditPopup = new PopupWithForm(
@@ -76,23 +114,6 @@ function handleAvatarFormSubmit({ url }) {
     });
 }
 
-//Get Cards
-Promise.all([api.getInitialCards()])
-  .then(([initialCards]) => {
-    console.log(initialCards);
-    cardSection = new Section(
-      {
-        items: initialCards,
-        renderer: (cardData) => {
-          const cardElement = renderCard(cardData);
-          cardSection.addItem(cardElement);
-        },
-      },
-      cardsWrap
-    );
-    cardSection.renderItems();
-  })
-  .catch(console.error);
 // Popup for image preview
 export const previewImagePopup = new PopupWithImage("#preview-modal");
 
@@ -130,6 +151,7 @@ profileEditButton.addEventListener("click", () => {
 
 avatarEditButton.addEventListener("click", () => {
   avatarEditPopup.open();
+  // editAvatarValidator.toggleButtonState();
 });
 
 //to render a card
@@ -144,7 +166,6 @@ function renderCard(cardData) {
         api
           .removeCard(cardData._id)
           .then((res) => {
-            console.log("here");
             cardElement.removeCardElement(res._id);
             cardDeletePopup.close();
           })
@@ -153,7 +174,7 @@ function renderCard(cardData) {
             cardDeletePopup.setLoading(false);
           });
       });
-      cardDeletePopup.setEventListeners();
+      // cardDeletePopup._setEventListeners();
       cardDeletePopup.open();
     },
     function handleLikeButtonClick() {
@@ -203,7 +224,7 @@ function handleAddCardFormSubmit(inputValues) {
     .finally(() => {
       addCardPopupForm.setLoading(false);
     });
-  renderCard({ name, link });
+  // renderCard({ name, link });
 }
 
 /* -------------------------------------------------------------------------- */
@@ -223,3 +244,9 @@ const editFormValidator = new FormValidator(
   profileEditForm
 );
 editFormValidator.enableValidation();
+
+// const editAvatarValidator = new FormValidator(
+//   formValidatorConfig,
+//   avatarSubmitButton
+// );
+// editAvatarValidator.enableValidation();

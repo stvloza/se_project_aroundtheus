@@ -48,12 +48,8 @@ class PopupWithForm extends Popup {
   // Sets up event listeners for the popup
   _setEventListeners() {
     super._setEventListeners(); // Sets up event listeners inherited from the parent class (Popup)
-    console.log(this._submitForm);
-    this._popupElement.addEventListener("submit", (e) => {
-      e.preventDefault();
-      this._submitForm(e);
-    }); // Listens for form submission to trigger the _submitForm method
-  }
+    this._popupElement.addEventListener("submit", this._submitForm);
+  } // Listens for form submission to trigger the _submitForm method
 }
 
 export default PopupWithForm;

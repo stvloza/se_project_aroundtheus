@@ -65,9 +65,7 @@ class Card {
   // Event handler for the like button click event
   _handleLikeButton() {
     // Toggle the 'card__like-button_active' class on the like button
-    this._cardElement
-      .querySelector(".card__like-button")
-      .classList.toggle("card__like-button_active");
+    this._likeButton.classList.toggle("card__like-button_active");
   }
 
   // Sets up event listeners on the card element

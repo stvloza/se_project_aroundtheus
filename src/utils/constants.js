@@ -63,3 +63,6 @@ export const profileAddCardForm = addCardModal.querySelector(".modal__form");
 // Cards container element
 export const cardsWrap = document.querySelector(".cards__list");
 export const avatarEditButton = document.querySelector(".profile__edit__photo");
+export const avatarSubmitButton = document.querySelector(
+  ".avatar__submit__button"
+);

@@ -7,11 +7,10 @@ export default class PopupWithConfirm extends Popup {
     this._submitButton = this._popupForm.querySelector(
       ".form__button_type_delete"
     );
-    // this._submitButtonText = this._submitButton.textContent;
+    this._submitButtonText = this._submitButton.textContent;
   }
 
   setSubmitAction(action) {
-    console.log("aaa");
     this._handleFormSubmit = action;
   }
 
@@ -30,7 +29,7 @@ export default class PopupWithConfirm extends Popup {
     this._popupForm.removeEventListener("submit", this._handleFormSubmit);
   }
 
-  setEventListeners() {
+  _setEventListeners() {
     super._setEventListeners();
     this._popupForm.addEventListener("submit", (e) => {
       e.preventDefault();

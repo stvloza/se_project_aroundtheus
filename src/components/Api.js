@@ -13,17 +13,17 @@ export default class Api {
   }
 
   getInitialCards() {
-    const Cardinfo = this._request(`${this._baseUrl}/cards`, {
+    const cardInfo = this._request(`${this._baseUrl}/cards`, {
       headers: this._headers,
     });
-    return Cardinfo;
+    return cardInfo;
   }
 
   getUserInfo() {
-    const UserInfo = this._request(`${this._baseUrl}/users/me`, {
+    const userInfo = this._request(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     });
-    return UserInfo;
+    return userInfo;
   }
 
   setUserInfo(name, description) {
