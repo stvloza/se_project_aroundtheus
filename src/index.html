@@ -163,13 +163,13 @@
     <div class="modal" id="modal-avatar-edit">
       <div class="modal__container">
         <button class="modal__close" id="profile-close-button"></button>
-        <h2 class="modal__heading">Change profile picture</h2>
         <form
           class="modal__form form"
           id="profile-avatar-form"
           name="avatar-form"
-          novalidate
         >
+          <h2 class="modal__heading">Change profile picture</h2>
+
           <input
             type="url"
             name="url"
@@ -179,11 +179,7 @@
             minlength="2"
             required
           />
-          <span class="modal__error" id="profile-title-input-error"></span>
-          <span
-            class="modal__error"
-            id="profile-description-input-error"
-          ></span>
+          <span class="modal__error" id="profile-avatar-input-url-error"></span>
           <button type="submit" class="modal__button avatar__submit__button">
             Save
           </button>

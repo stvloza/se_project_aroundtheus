@@ -21,7 +21,7 @@ import {
   profileAddCardForm,
   cardsWrap,
   avatarEditButton,
-  avatarSubmitButton,
+  avatarSubmitForm,
 } from "../utils/constants.js";
 
 /* -------------------------------------------------------------------------- */
@@ -150,8 +150,8 @@ profileEditButton.addEventListener("click", () => {
 });
 
 avatarEditButton.addEventListener("click", () => {
+  editAvatarValidator.toggleButtonState();
   avatarEditPopup.open();
-  // editAvatarValidator.toggleButtonState();
 });
 
 //to render a card
@@ -244,8 +244,8 @@ const editFormValidator = new FormValidator(
 );
 editFormValidator.enableValidation();
 
-// const editAvatarValidator = new FormValidator(
-//   formValidatorConfig,
-//   avatarSubmitButton
-// );
-// editAvatarValidator.enableValidation();
+const editAvatarValidator = new FormValidator(
+  formValidatorConfig,
+  avatarSubmitForm
+);
+editAvatarValidator.enableValidation();
