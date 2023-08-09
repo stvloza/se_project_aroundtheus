@@ -114,7 +114,7 @@ function handleAvatarFormSubmit({ url }) {
     });
 }
 
-// Popup for image preview
+// Popup for image previe
 export const previewImagePopup = new PopupWithImage("#preview-modal");
 
 // Popup for profile edit form
@@ -224,7 +224,6 @@ function handleAddCardFormSubmit(inputValues) {
     .finally(() => {
       addCardPopupForm.setLoading(false);
     });
-  // renderCard({ name, link });
 }
 
 /* -------------------------------------------------------------------------- */
