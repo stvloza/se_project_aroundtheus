@@ -28,9 +28,9 @@ class PopupWithForm extends Popup {
   // Retrieves the values of the form inputs and returns them as an object
   _getInputValues() {
     const inputsObject = {};
-    const inputList = this._popupForm.querySelectorAll(".modal__input");
-    console.log(inputList);
-    inputList.forEach((input) => {
+    // const inputList = this._popupForm.querySelectorAll(".modal__input");
+    // console.log(inputList);
+    this._inputs.forEach((input) => {
       if (input.value !== "") {
         inputsObject[input.name] = input.value;
       }
@@ -41,7 +41,6 @@ class PopupWithForm extends Popup {
   // Submits the form by calling the handleFormSubmit function with the input values
   _submitForm = () => {
     const inputValues = this._getInputValues();
-    console.log(inputValues);
     this._handleFormSubmit(inputValues);
   };
 
