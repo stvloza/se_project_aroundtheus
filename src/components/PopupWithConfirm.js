@@ -24,10 +24,10 @@ export default class PopupWithConfirm extends Popup {
     }
   }
 
-  close() {
-    super.close();
-    this._popupForm.removeEventListener("submit", this._handleFormSubmit);
-  }
+  // close() {
+  //   super.close();
+  //   this._popupForm.removeEventListener("submit", this._handleFormSubmit);
+  // }
 
   // _setEventListeners() {
   //   super._setEventListeners();
