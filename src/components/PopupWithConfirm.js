@@ -29,11 +29,30 @@ export default class PopupWithConfirm extends Popup {
     this._popupForm.removeEventListener("submit", this._handleFormSubmit);
   }
 
+  // _setEventListeners() {
+  //   super._setEventListeners();
+  //   this._popupForm.addEventListener("submit", (e) => {
+  //     e.preventDefault();
+  //     this._handleFormSubmit(e);
+  //   });
+  // }
+
   _setEventListeners() {
     super._setEventListeners();
-    this._popupForm.addEventListener("submit", (e) => {
+
+    // Store a reference to the event handler function for later removal
+    this._formSubmitHandler = (e) => {
       e.preventDefault();
       this._handleFormSubmit(e);
-    });
+    };
+
+    this._popupForm.addEventListener("submit", this._formSubmitHandler);
+  }
+
+  // Method to remove the event listener
+  _removeEventListeners() {
+    super._removeEventListeners();
+
+    this._popupForm.removeEventListener("submit", this._formSubmitHandler);
   }
 }
