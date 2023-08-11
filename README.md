@@ -1,6 +1,6 @@
-🌎 **Project 3: Around The U.S.** 🌎
+🌎 **Project 3: Around The U.S.** 
 
-Welcome to the "Around The U.S." project! 🎉 This project aims to create an interactive website where users can explore various locations in the United States and share their own favorite places. The website allows users to view and add location cards, edit their profile information, and interact with the content
+Welcome to the "Around The U.S." project! 🎉 This project aims to create an interactive website where users can explore various locations in the United States and share their own favorite places. The website allows users to view and add location cards (photos with captions), edit their profile information (name and bio), change profile picture, and interact with the content (delete cards).
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ To run the project locally, follow these steps:
 
 ## Live Demo
 
-The website is live and can be accessed at: [Around The U.S.](https://www.example.com) ▶️
+The website is live and can be accessed at: [Around The U.S.]([https://www.example.com](https://stvloza.github.io/se_project_aroundtheus/)) ▶️
 
 Feel free to explore the site, interact with the features, and discover interesting locations across the United States.
 
