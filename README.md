@@ -5,17 +5,23 @@ Welcome to the "Around The U.S." project! 🎉 This project aims to create an in
 ## Table of Contents
 
 - 📖 **Overview** 📚
+- ▶️ **Live Demo** ▶️
 - 🎨 **Design** 🎨
 - ⚙️ **Technologies Used** ⚙️
 - 🌟 **Features** ✨
 - 🚀 **Getting Started** 🛠️
-- ▶️ **Live Demo** ▶️
 - 🤝 **Contributing** 👥
 - 📄 **License** 📜
 
 ## Overview
 
 This project focuses on building a responsive website that adapts well to different screen sizes. The design and layout of the website were implemented using HTML, CSS, and JavaScript. Key features of the project include user authentication, form validation, dynamic card rendering, and image popups.
+
+## Live Demo
+
+The website is live and can be accessed at: https://stvloza.github.io/se_project_aroundtheus/
+
+Feel free to explore the site, interact with the features, and discover interesting locations across the United States.
 
 ## Design
 
@@ -50,12 +56,6 @@ To run the project locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/stvloza/se_project_aroundtheus.git`
 2. Navigate to the project directory: `cd se_project_aroundtheus`
 3. Open the `index.html` file in a web browser
-
-## Live Demo
-
-The website is live and can be accessed at: https://stvloza.github.io/se_project_aroundtheus/
-
-Feel free to explore the site, interact with the features, and discover interesting locations across the United States.
 
 ## Contributing
 
