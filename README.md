@@ -19,7 +19,7 @@ This project focuses on building a responsive website that adapts well to differ
 
 ## Design
 
-The project design was created using Figma, a collaborative design tool. The design brief can be accessed through the following link: [Figma Project](https://www.figma.com).
+The project design was created using Figma, a collaborative design tool. The design brief can be accessed through the following link: [Figma Project]([https://www.figma.com](https://www.figma.com/file/E5x6ib3osaUUNwLRRAsTDX/Sprint-9-%E2%80%94-Applied-JavaScript?type=design&node-id=1530-2&mode=design&t=noSgP9EIqvLQ6VjX-0)).
 
 The Figma design served as a guide for implementing the HTML and CSS styles to achieve the desired look and feel of the website.
 
