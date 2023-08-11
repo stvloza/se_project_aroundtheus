@@ -53,7 +53,7 @@ To run the project locally, follow these steps:
 
 ## Live Demo
 
-The website is live and can be accessed at: [Around The U.S.]([https://www.example.com](https://stvloza.github.io/se_project_aroundtheus/)) ▶️
+The website is live and can be accessed at: https://stvloza.github.io/se_project_aroundtheus/
 
 Feel free to explore the site, interact with the features, and discover interesting locations across the United States.
 
