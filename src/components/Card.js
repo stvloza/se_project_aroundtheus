@@ -5,24 +5,43 @@ class Card {
     data,
     templateSelector,
     handleCardImageClick,
+    handleDeleteClick,
+    handleLikeButtonClick,
     previewImageModal,
     previewDescriptionModal
   ) {
     this._name = data.name; // The name of the card
+
     this._link = data.link; // The image link for the card
+    this.isLiked = data.isLiked;
     this._templateSelector = templateSelector; // The selector for the card's HTML template
     this._handleCardImageClick = handleCardImageClick; // Function to handle card image click event
     this._previewImageModal = previewImageModal; // Reference to the image preview modal
     this._previewDescriptionModal = previewDescriptionModal; // Reference to the description preview modal
+    this._handleDeleteClick = handleDeleteClick;
+    this._handleLikeButtonClick = handleLikeButtonClick;
+  }
+
+  removeCardElement() {
+    this._cardElement.remove();
   }
 
   // Retrieves the card template from the DOM and clones it
   _getTemplate() {
-    return document
+    this._cardElement = document
       .querySelector(`${this._templateSelector}`)
       .content.querySelector(".card")
       .cloneNode(true);
+    return this._cardElement;
   }
+
+  // _getTemplate() {
+  //   this._cardElement = document
+  //     .querySelector(this._cardTemplateSelector)
+  //     .content.querySelector(".card")
+  //     .cloneNode(true);
+  //   return this._cardElement;
+  // }
 
   // Event handler for the delete button click event
   _handleDeleteButton() {
@@ -30,12 +49,23 @@ class Card {
     this._cardElement = null; // Set the card element to null
   }
 
+  _toggleLikeButton() {
+    if (this.isLiked) {
+      this._likeButton.classList.add("card__like-button_active");
+    } else {
+      this._likeButton.classList.remove("card__like-button_active");
+    }
+  }
+
+  updateLikes(isLiked) {
+    this.isLiked = isLiked;
+    this._toggleLikeButton();
+  }
+
   // Event handler for the like button click event
   _handleLikeButton() {
     // Toggle the 'card__like-button_active' class on the like button
-    this._cardElement
-      .querySelector(".card__like-button")
-      .classList.toggle("card__like-button_active");
+    this._likeButton.classList.toggle("card__like-button_active");
   }
 
   // Sets up event listeners on the card element
@@ -50,12 +80,16 @@ class Card {
     // Event listener for the delete button click event
     this._cardElement
       .querySelector(".card__delete-button")
-      .addEventListener("click", () => this._handleDeleteButton());
+      .addEventListener("click", () => this._handleDeleteClick());
 
     // Event listener for the like button click event
     this._cardElement
       .querySelector(".card__like-button")
-      .addEventListener("click", () => this._handleLikeButton());
+      .addEventListener("click", () => this._handleLikeButtonClick());
+
+    // this._deleteButton.addEventListener("click", () =>
+    //   this._handleDeleteClick()
+    // );
   }
 
   // Creates and returns the card element
@@ -65,6 +99,11 @@ class Card {
     this._cardElement.querySelector(".card__title").textContent = this._name; // Set the title of the card
     this._cardElement.querySelector(".card__image").src = this._link; // Set the image source of the card
     this._cardElement.querySelector(".card__image").alt = this._name; // Set the alt text of the card image
+    this._deleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._toggleLikeButton();
 
     return this._cardElement; // Return the card element
   }
