@@ -68,32 +68,6 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
   })
   .catch(console.error);
 
-// User Info
-// Promise.all([api.getUserInfo()])
-//   .then(([userData]) => {
-//     userInfo.setUserInfo(userData.name, userData.about);
-//     userInfo.setUserAvatar(userData.avatar);
-//     // userId = userData._id;
-//   })
-//   .catch(console.error);
-
-// //Get Cards
-// Promise.all([api.getInitialCards()])
-//   .then(([initialCards]) => {
-//     cardSection = new Section(
-//       {
-//         items: initialCards,
-//         renderer: (cardData) => {
-//           const cardElement = renderCard(cardData);
-//           cardSection.addItem(cardElement);
-//         },
-//       },
-//       cardsWrap
-//     );
-//     cardSection.renderItems();
-//   })
-//   .catch(console.error);
-
 const cardDeletePopup = new PopupWithConfirm("#modal-card-delete");
 const avatarEditPopup = new PopupWithForm(
   "#modal-avatar-edit",

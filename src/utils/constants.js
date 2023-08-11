@@ -33,20 +33,17 @@
 /* -------------------------------------------------------------------------- */
 /*                                  Constants                                 */
 /* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/*                                   Elements                                  */
-/* -------------------------------------------------------------------------- */
 
 // Configuration for form validation
 export const formValidatorConfig = {
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__button",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
+  inputSelector: ".modal__input", // Selector for input fields within a modal
+  submitButtonSelector: ".modal__button", // Selector for submit button within a modal
+  inactiveButtonClass: "modal__button_disabled", // Class to disable the submit button
+  inputErrorClass: "modal__input_type_error", // Class to mark input fields with errors
+  errorClass: "modal__error_visible", // Class to make error messages visible
 };
 
-// Profile edit button and modal elements
+// Profile Edit Section
 export const profileEditButton = document.querySelector("#profile-edit-button");
 export const profileEditModal = document.querySelector("#profile-edit-modal");
 export const profileTitleInput = document.querySelector("#profile-title-input");
@@ -55,12 +52,14 @@ export const profileDescriptionInput = document.querySelector(
 );
 export const profileEditForm = profileEditModal.querySelector(".modal__form");
 
-// Add card button and modal elements
+// Add Card Section
 export const addCardModal = document.querySelector("#add-form-modal");
 export const addNewCardButton = document.querySelector("#profile-add-button");
 export const profileAddCardForm = addCardModal.querySelector(".modal__form");
 
-// Cards container element
+// Cards Section
 export const cardsWrap = document.querySelector(".cards__list");
+
+// Avatar Edit Section
 export const avatarEditButton = document.querySelector(".profile__edit__photo");
 export const avatarSubmitForm = document.querySelector("#profile-avatar-form");
